@@ -26,7 +26,7 @@ def is_node_installed():
     return shutil.which('node') is not None
 
 
-class LspVuePlugin(LanguageHandler):
+class LspDockerfilePlugin(LanguageHandler):
     @property
     def name(self) -> str:
         return PACKAGE_NAME.lower()

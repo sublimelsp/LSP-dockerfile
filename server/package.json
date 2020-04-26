@@ -1,0 +1,7 @@
+{
+  "name": "lsp-dockerfile",
+  "version": "1.0.0",
+  "dependencies": {
+    "dockerfile-language-server-nodejs": "^0.0.24"
+  }
+}

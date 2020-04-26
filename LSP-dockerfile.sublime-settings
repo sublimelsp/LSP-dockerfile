@@ -1,0 +1,28 @@
+{
+	"languages": [
+		{
+			"languageId": "dockerfile",
+			"scopes": ["source.dockerfile"],
+			"syntaxes": ["Packages/Dockerfile Syntax Highlighting/Syntaxes/Dockerfile.sublime-syntax"],
+		}
+	],
+	"env": {},
+	"initializationOptions": {},
+	"settings": {
+		"docker": {
+			"languageserver": {
+				"diagnostics": {
+					// string values must be equal to "ignore", "warning", or "error"
+					"deprecatedMaintainer": "warning",
+					"directiveCasing": "warning",
+					"emptyContinuationLine": "warning",
+					"instructionCasing": "warning",
+					"instructionCmdMultiple": "warning",
+					"instructionEntrypointMultiple": "warning",
+					"instructionHealthcheckMultiple": "warning",
+					"instructionJSONInSingleQuotes": "warning"
+				}
+			}
+		}
+	},
+}

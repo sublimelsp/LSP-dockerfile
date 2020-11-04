@@ -15,3 +15,7 @@ class LspDockerfilePlugin(NpmClientHandler):
     server_directory = 'server'
     server_binary_path = os.path.join(
         server_directory, 'node_modules', 'dockerfile-language-server-nodejs', 'bin', 'docker-langserver')
+
+    @classmethod
+    def install_in_cache(cls) -> bool:
+        return False

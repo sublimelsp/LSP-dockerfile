@@ -22,6 +22,9 @@
 					"instructionEntrypointMultiple": "warning",
 					"instructionHealthcheckMultiple": "warning",
 					"instructionJSONInSingleQuotes": "warning"
+				},
+				"formatter": {
+					"ignoreMultilineInstructions": false,
 				}
 			}
 		}

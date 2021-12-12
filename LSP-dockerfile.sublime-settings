@@ -1,13 +1,6 @@
 {
 	"command": ["${node_bin}", "${server_path}", "--stdio"],
 	"schemes": ["file", "buffer", "res"],
-	"languages": [
-		{
-			"languageId": "dockerfile",
-			"scopes": ["source.dockerfile"],
-			"syntaxes": ["Packages/Dockerfile Syntax Highlighting/Syntaxes/Dockerfile.sublime-syntax"],
-		}
-	],
 	"env": {},
 	"initializationOptions": {},
 	"settings": {
@@ -30,4 +23,14 @@
 			}
 		}
 	},
+	// ST4
+	"selector": "source.dockerfile",
+	// ST3
+	"languages": [
+		{
+			"languageId": "dockerfile",
+			"scopes": ["source.dockerfile"],
+			"syntaxes": ["Packages/Dockerfile Syntax Highlighting/Syntaxes/Dockerfile.sublime-syntax"],
+		}
+	],
 }

@@ -23,9 +23,6 @@
 			}
 		}
 	},
-	// ST4
-	"selector": "source.dockerfile",
-	// ST3
 	"languages": [
 		{
 			"languageId": "dockerfile",

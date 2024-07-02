@@ -23,14 +23,5 @@
 			}
 		}
 	},
-	// ST4
-	"selector": "source.dockerfile",
-	// ST3
-	"languages": [
-		{
-			"languageId": "dockerfile",
-			"scopes": ["source.dockerfile"],
-			"syntaxes": ["Packages/Dockerfile Syntax Highlighting/Syntaxes/Dockerfile.sublime-syntax"],
-		}
-	],
+	"selector": "source.dockerfile"
 }

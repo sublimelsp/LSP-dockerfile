@@ -4,7 +4,7 @@ Dockerfile support for Sublime's LSP plugin provided through [Dockerfile Languag
 
 ### Installation
 
- * Install the [Dockerfile Syntax Highlighting](https://packagecontrol.io/packages/Dockerfile%20Syntax%20Highlighting) package for syntax highlighting and `LSP-dockerfile` from Package Control.
+ * Install `LSP-dockerfile` from Package Control. For syntax highlighting, install either [Containerfile](https://packagecontrol.io/packages/Containerfile) or [Dockerfile Syntax Highlighting](https://packagecontrol.io/packages/Dockerfile%20Syntax%20Highlighting).
  * Restart Sublime.
 
 ### Configuration

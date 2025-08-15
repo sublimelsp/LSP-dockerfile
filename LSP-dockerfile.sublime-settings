@@ -23,5 +23,5 @@
 			}
 		}
 	},
-	"selector": "source.dockerfile"
+	"selector": "source.dockerfile | source.containerfile"
 }

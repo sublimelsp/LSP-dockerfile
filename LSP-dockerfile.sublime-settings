@@ -1,8 +1,4 @@
 {
-	"command": ["${node_bin}", "${server_path}", "--stdio"],
-	"schemes": ["file", "buffer", "res"],
-	"env": {},
-	"initializationOptions": {},
 	"settings": {
 		"docker": {
 			"languageserver": {
@@ -23,5 +19,7 @@
 			}
 		}
 	},
-	"selector": "source.dockerfile | source.containerfile"
+	"command": ["${node_bin}", "${server_path}", "--stdio"],
+	"selector": "source.dockerfile | source.containerfile",
+	"schemes": ["file", "buffer", "res"],
 }

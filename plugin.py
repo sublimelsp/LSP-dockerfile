@@ -1,19 +1,31 @@
 from __future__ import annotations
 
-from lsp_utils import NpmClientHandler
-import os
+from LSP.plugin import LspPlugin
+from LSP.plugin import OnPreStartContext
+from lsp_utils import NodeManager
+from pathlib import Path
+from sublime_lib import ResourcePath
+from typing_extensions import override
 
 
 def plugin_loaded():
-    LspDockerfilePlugin.setup()
+    LspDockerfilePlugin.register()
 
 
 def plugin_unloaded():
-    LspDockerfilePlugin.cleanup()
+    LspDockerfilePlugin.unregister()
 
 
-class LspDockerfilePlugin(NpmClientHandler):
-    package_name = str(__package__)
-    server_directory = 'server'
-    server_binary_path = os.path.join(
-        server_directory, 'node_modules', 'dockerfile-language-server-nodejs', 'bin', 'docker-langserver')
+class LspDockerfilePlugin(LspPlugin):
+
+    @classmethod
+    @override
+    def on_pre_start_async(cls, context: OnPreStartContext) -> None:
+        package_name = cls.plugin_storage_path.name
+        NodeManager.on_pre_start_async(
+            context,
+            cls.plugin_storage_path,
+            ResourcePath('Packages', package_name, 'server'),
+            Path('node_modules', 'dockerfile-language-server-nodejs', 'bin', 'docker-langserver'),
+            '>=22',
+        )

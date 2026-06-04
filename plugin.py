@@ -27,5 +27,5 @@ class LspDockerfilePlugin(LspPlugin):
             cls.plugin_storage_path,
             ResourcePath('Packages', package_name, 'server'),
             Path('node_modules', 'dockerfile-language-server-nodejs', 'bin', 'docker-langserver'),
-            '>=22',
+            node_version_requirement='>=22',
         )

@@ -9,8 +9,21 @@ on:
 
 jobs:
   smoke:
-    uses: sublimelsp/lsp_smoke_test/.github/workflows/smoke-test.yml@v1
-    with:
-      # Provides the Containerfile syntax, which Sublime Text doesn't include.
-      extra-packages: |
-        keith-hall/Containerfile-sublime-syntax@ST4-v
+    name: Smoke test (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+
+      # The server needs Node.js 22 or later, which is newer than the runners' default.
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+
+      - uses: sublimelsp/lsp_smoke_test@v1
+        with:
+          # Provides the Containerfile syntax, which Sublime Text doesn't include.
+          extra-packages: keith-hall/Containerfile-sublime-syntax@ST4-v

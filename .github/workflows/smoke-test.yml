@@ -18,10 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # The server needs Node.js 22 or later, which is newer than the runners' default.
+      # Test with the oldest Node.js that the package supports (node_version_requirement in plugin.py), which is newer
+      # than the runners' default.
       - uses: actions/setup-node@v6
         with:
-          node-version: lts/*
+          node-version: '22'
 
       - uses: sublimelsp/lsp_smoke_test@v1
         with:

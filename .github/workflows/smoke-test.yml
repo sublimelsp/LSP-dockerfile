@@ -18,13 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # Test with the oldest Node.js that the package supports (node_version_requirement in plugin.py), which is newer
-      # than the runners' default.
+      # Test with the oldest Node.js that the package supports (node_version_requirement in plugin.py).
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
 
       - uses: sublimelsp/lsp_smoke_test@v1
         with:
-          # Provides the Dockerfile syntax, which Sublime Text doesn't include.
           extra-packages: asbjornenge/Docker.tmbundle@v

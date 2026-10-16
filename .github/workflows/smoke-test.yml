@@ -25,5 +25,5 @@ jobs:
 
       - uses: sublimelsp/lsp_smoke_test@v1
         with:
-          # Provides the Containerfile syntax, which Sublime Text doesn't include.
-          extra-packages: keith-hall/Containerfile-sublime-syntax@ST4-v
+          # Provides the Dockerfile syntax, which Sublime Text doesn't include.
+          extra-packages: asbjornenge/Docker.tmbundle@v

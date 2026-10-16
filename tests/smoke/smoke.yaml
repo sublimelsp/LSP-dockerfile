@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/sublimelsp/lsp_smoke_test/v1/smoke.schema.json
 file: Dockerfile
-# Assign the syntax from the Containerfile package explicitly, since the file has no extension.
-syntax: source.containerfile
+# Assign the syntax from Dockerfile Syntax Highlighting explicitly, since the file has no extension.
+syntax: source.dockerfile
 # The Dockerfile has no FROM instruction.
 expected_diagnostics:
   message: No source image provided

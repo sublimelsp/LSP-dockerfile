@@ -21,7 +21,7 @@ jobs:
       # Test with the oldest Node.js that the package supports (node_version_requirement in plugin.py).
       - uses: actions/setup-node@v7
         with:
-          node-version: '22'
+          node-version: '26'
 
       - uses: sublimelsp/lsp_smoke_test@v1
         with:

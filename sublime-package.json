@@ -1,0 +1,177 @@
+{
+  "contributions": {
+    "settings": [
+      {
+        "file_patterns": [
+          "/LSP-dockerfile.sublime-settings"
+        ],
+        "schema": {
+          "$id": "sublime://settings/LSP-dockerfile",
+          "allOf": [
+            {
+              "$ref": "sublime://settings/LSP-plugin-base"
+            },
+            {
+              "$ref": "sublime://settings/LSP-dockerfile#/definitions/PluginConfig"
+            }
+          ],
+          "definitions": {
+            "PluginConfig": {
+              "properties": {
+                "server_path": {
+                  "type": "string",
+                  "default": "auto",
+                  "markdownDescription": "The path to the server binary to use for starting the language server. Use `auto` for the package to manage (install/update) server automatically.\n\n> [!NOTE]\n> Change this instead of directly updating `command` - the `${server_path}` variable is dynamically resolved based on this setting.\n\n> [!WARNING]\n> Using custom binary could result in package settings not matching what server supports."
+                },
+                "settings": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "docker": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "languageserver": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "diagnostics": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "deprecatedMaintainer": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of the deprecated `MAINTAINER` instruction."
+                                },
+                                "directiveCasing": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of parser directives that are not written in lowercase."
+                                },
+                                "emptyContinuationLine": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of empty continuation lines."
+                                },
+                                "instructionCasing": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of instructions that are not written in uppercase."
+                                },
+                                "instructionCmdMultiple": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of multiple `CMD` instructions in a build stage."
+                                },
+                                "instructionEntrypointMultiple": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of multiple `ENTRYPOINT` instructions in a build stage."
+                                },
+                                "instructionHealthcheckMultiple": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of multiple `HEALTHCHECK` instructions in a build stage."
+                                },
+                                "instructionJSONInSingleQuotes": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of JSON arrays written with single quotes instead of double quotes."
+                                },
+                                "instructionWorkdirRelative": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ignore",
+                                    "warning",
+                                    "error"
+                                  ],
+                                  "default": "warning",
+                                  "markdownDescription": "Severity of `WORKDIR` instructions that use a relative path."
+                                }
+                              }
+                            },
+                            "formatter": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "ignoreMultilineInstructions": {
+                                  "type": "boolean",
+                                  "default": false,
+                                  "markdownDescription": "Whether to skip formatting of instructions that span multiple lines."
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "file_patterns": [
+          "/*.sublime-project"
+        ],
+        "schema": {
+          "properties": {
+            "settings": {
+              "properties": {
+                "LSP": {
+                  "properties": {
+                    "LSP-dockerfile": {
+                      "$ref": "sublime://settings/LSP-dockerfile#/definitions/PluginConfig"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
